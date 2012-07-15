@@ -15,7 +15,7 @@ development:
   database: BunkSheet_development
   pool: 5
   username: root
-  password:
+  password: vinay007
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: BunkSheet_test
   pool: 5
   username: root
-  password:
+  password: vinay007
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -38,5 +38,5 @@ production:
   database: BunkSheet_production
   pool: 5
   username: root
-  password:
+  password: vinay007
   socket: /var/run/mysqld/mysqld.sock
