@@ -33,6 +33,7 @@ GEM
     arel (3.0.2)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
+    bootstrap-sass (2.0.0)
     builder (3.0.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -146,6 +147,7 @@ PLATFORMS
 
 DEPENDENCIES
   autotest
+  bootstrap-sass (= 2.0.0)
   coffee-rails (~> 3.2.1)
   execjs
   heroku
