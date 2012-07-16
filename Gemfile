@@ -14,7 +14,7 @@ group :development do
   gem 'autotest'
   gem 'webrat'
   gem 'heroku'
-	gem 'taps', :require => false
+  gem 'taps'
 end
 
 group :production do
