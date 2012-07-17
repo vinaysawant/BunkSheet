@@ -17,10 +17,14 @@ group :development do
   gem 'taps'
 end
 
+group :development, :test do
+  gem 'mysql2'
+end
+
 group :production do
   gem 'pg'
-  gem 'thin'
-  gem 'mysql2'
+#  gem 'thin'
+#  gem 'mysql2'
 end 
 # Gems used only for assets and not required
 # in production environments by default.
