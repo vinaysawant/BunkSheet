@@ -14,6 +14,7 @@ group :development do
   gem 'autotest'
   gem 'webrat'
   gem 'heroku'
+  gem 'annotate',:git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
 end
 
 # Gems used only for assets and not required
