@@ -1,5 +1,14 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name
+
+	email_regx = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
+	validates :name, :presence   => true,
+									 :length	   => { :maximum => 50}
+	validates :email,:presence   => true,
+									 :format 	   => { :with => email_regx},
+									 :uniqueness => { :case_sensitive => false}
+
 end
 
 # == Schema Information
@@ -12,4 +21,5 @@ end
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
 #
+
 
