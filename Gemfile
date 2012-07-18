@@ -9,14 +9,17 @@ gem 'mysql2'
 
 group :development do
   gem 'rspec-rails','2.11.0'
-  gem 'rspec','2.11.0'
-  gem 'spork'
-  gem 'autotest'
+	gem 'autotest'
   gem 'webrat'
   gem 'heroku'
   gem 'annotate',:git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
 end
 
+group :test do
+	gem 'factory_girl_rails'
+  gem 'rspec','2.11.0'
+  gem 'spork'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
