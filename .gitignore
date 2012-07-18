@@ -13,7 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
+*.log
 # Ignore bundler config
 /.bundle
 
@@ -31,4 +31,3 @@ doc/
 .project
 .DS_Store
 .idea
-.log
