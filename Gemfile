@@ -4,16 +4,20 @@ gem 'rails', '3.2.6'
 gem 'bootstrap-sass', '2.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+<<<<<<< HEAD
 
 #gem 'mysql2'
+=======
+gem 'gravatar_image_tag'
+gem 'mysql2'
+>>>>>>> modeling-users
 
 group :development do
   gem 'rspec-rails','2.11.0'
-  gem 'rspec','2.11.0'
-  gem 'spork'
-  gem 'autotest'
+	gem 'autotest'
   gem 'webrat'
   gem 'heroku'
+<<<<<<< HEAD
   gem 'taps'
 end
 
@@ -26,6 +30,16 @@ group :production do
 #  gem 'thin'
 #  gem 'mysql2'
 end 
+=======
+  gem 'annotate',:git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
+end
+
+group :test do
+	gem 'factory_girl_rails'
+  gem 'rspec','2.11.0'
+  gem 'spork'
+end
+>>>>>>> modeling-users
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
