@@ -21,6 +21,7 @@ group :production, :test do
   gem 'spork'
   gem 'pg'
   gem 'thin'
+  gem 'activerecord-postgresql-adapter'
 end
 # Gems used only for assets and not required
 # in production environments by default.
