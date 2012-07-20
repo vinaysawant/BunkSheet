@@ -17,11 +17,12 @@ render_views
 
 	describe "POST 'create'" do
 		
-		before(:each) do
-			@attr = {	:email => "",:password => ""}		  
-		end
-
 		describe "failure" do
+
+			before(:each) do
+				@attr = {	:email => "",:password => ""}		  
+			end
+
 			it "should re-render the new page" do
 				post :create, :session  => @attr
 				response.should render_template('new')
@@ -36,5 +37,28 @@ render_views
 				flash.now[:error].should =~ /invalid/i
 			end
 		end
+
+		describe "success" do
+			
+			before(:each) do
+			  @user = Factory.create(:user)
+				@attr = { :email => @user.email, :password => @user.password}
+				User.should_receive(:authenticate).
+             with(@user.email, @user.password).
+             and_return(@user)
+			end
+	
+			it "should sign in the user" do
+				post :create, :session => @attr
+				controller.current_user.should == @user
+				controller.should be_signed_in
+			end
+
+			it "should redirect to the user show page"  do
+				post :create, :session => @attr
+				response.should redirect_to(user_path(@user))
+			end
+		end
+
 	end
 end
