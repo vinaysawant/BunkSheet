@@ -1,0 +1,11 @@
+<h1>Edit User</h1>
+<%= form_for(@user) do |f| %>
+	<%= render 'fields', :f => f %>		
+	<div class="field">
+		<%= f.submit "Update" ,class: "btn btn-large btn-primary" %><br />
+	</div>
+<% end %>
+<div>
+	<%= gravatar_for @user %>
+	<a href= "http://gravatar.com/emails" target=_blank>change </a>
+</div>
