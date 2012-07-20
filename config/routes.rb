@@ -1,19 +1,16 @@
 BunkSheet::Application.routes.draw do
 
 	resources :users
-#	get 'users/new'
+	resources :sessions, :only => [:new,:create,:destroy]
+
 	root :to => 'pages#home'
-	match '/signup',  to: 'users#new'
-	match '/contact',:to => 'pages#contact'
-	match '/about',:to => 'pages#about'
-	match '/help',:to => 'pages#help'
-#  get 'pages/home'
 
-#  get 'pages/contact'
-
-#  get 'pages/about'
-
-#  get 'pages/help'
+	match '/signup', 		:to => 'users#new'
+	match '/contact',		:to => 'pages#contact'
+	match '/about',			:to => 'pages#about'
+	match '/help',			:to => 'pages#help'
+	match '/signin',		:to => 'sessions#new'
+	match '/signout',		:to => 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
