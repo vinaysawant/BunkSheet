@@ -186,17 +186,37 @@ describe UsersController do
 		before(:each) do
 		  @user = Factory(:user)
 		end
-
-		it "should deny access to edit" do
-			get :edit ,:id => @user
-			response.should redirect_to(signin_path)
-			flash[:notice].should =~ /sign in/i
-		end
+	
+		describe "for non signed in user" do
+			it "should deny access to edit" do
+				get :edit ,:id => @user
+				response.should redirect_to(signin_path)
+				flash[:notice].should =~ /sign in/i
+			end
 		
-		it "should deny access to update path" do
-			get :edit ,:id => @user ,:user => {}
-			response.should redirect_to(signin_path)
-			flash[:notice].should =~ /sign in/i
+			it "should deny access to update path" do
+				get :edit ,:id => @user ,:user => {}
+				response.should redirect_to(signin_path)
+				flash[:notice].should =~ /sign in/i
+			end	
 		end
+
+		describe "for signed in users" do
+			before(:each) do
+			  wrong_user = Factory(:user, :email => "user@example.net")
+				test_sign_in(wrong_user)
+			end
+
+			it "should require matching users for 'edit'" do
+				get :edit ,:id => @user
+				response.should redirect_to(root_path)
+			end
+
+			it "should require matching users for 'updat'" do
+				get :update ,:id => @user ,:user => {}
+				response.should redirect_to(root_path)
+			end
+		end
+
 	end
 end

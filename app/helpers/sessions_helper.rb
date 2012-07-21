@@ -23,7 +23,25 @@ module SessionsHelper
 	end
 
 	def deny_access
+		store_locations
 		redirect_to signin_path, :notice => "Please sign in to access this page"
+	end
+
+	def store_locations
+		session[:return_to] = request.fullpath		
+	end
+
+	def redirect_back_or(default)
+		redirect_to(session[:return_to] || default)
+		clear_return_to
+	end
+
+	def clear_return_to
+		session[:return_to] = nil		
+	end
+
+	def current_user?(user)
+		user == current_user
 	end
 
 	private
