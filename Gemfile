@@ -6,12 +6,14 @@ gem 'bootstrap-sass', '2.0.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'gravatar_image_tag'
 gem 'mysql2'
+gem 'will_paginate'
 
 group :development do
   gem 'rspec-rails','2.11.0'
   gem 'autotest'
   gem 'webrat'
   gem 'heroku'
+	gem 'faker'
   gem 'annotate',:git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
 end
 
