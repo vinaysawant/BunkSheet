@@ -147,3 +147,11 @@ div.field, div.actions{
   @extend .control-group;
   @extend .error;
  }
+
+ul.users{
+	margin-top: 1em;
+}
+
+ul.users li{
+	list-style: none;
+}
