@@ -51,8 +51,10 @@ class UsersController < ApplicationController
 
 	private
 		def authenticate
-			flash[:notice] = "Please sign in to access this page"
-			deny_access unless signed_in?
+			if !signed_in?
+				flash[:notice] = "Please sign in to access this page"
+				deny_access unless signed_in?
+			end
 		end
 
 		def correct_user
