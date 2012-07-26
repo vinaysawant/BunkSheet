@@ -1,5 +1,12 @@
-<div class="center">
-<h1>Welcome to the BunkSheet</h1>
-<h2>Just sign up and Keep track of your Bunked Lectures</h2>
-<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-</div>
+<% if !signed_in? %>
+	<div class="center">
+	<h1>Welcome to the BunkSheet</h1>
+	<h2>Just sign up and Keep track of your Bunked Lectures</h2>
+	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+	</div>
+<% else %>
+	<div class="center">
+	<h1>The Application is under constrution !!!</h1>
+	</div>
+<% end %>
+
