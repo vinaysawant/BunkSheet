@@ -171,6 +171,16 @@ describe User do
 			@user.should be_admin
 		end
 	end
+
+	describe "lecture associations" do
+		before(:each) do
+		  @user = User.create(@attr)
+		end
+	
+		it "should have a lecture attribute" do
+			@user.should respond_to(:lectures)
+		end	
+	end
 end
 
 # == Schema Information

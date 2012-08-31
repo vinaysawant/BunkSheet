@@ -14,6 +14,7 @@ describe "FriendlyForwardings" do
 		fill_in 		:email, 	:with => user.email
 		fill_in			:password,:with => user.password
 		click_button 
-		response.should render_template('users/show')		
+		response.should render_template('users/show')
+
 	end
 end

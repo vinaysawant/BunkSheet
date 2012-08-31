@@ -14,11 +14,11 @@ class UsersController < ApplicationController
 		@title = @user.name
 	end
 
-  def new
+    def new
 		@user = User.new
 		@title='Sign up'
-  end
-
+	end
+	
 	def create
 	
 		@user = User.new(params[:user])

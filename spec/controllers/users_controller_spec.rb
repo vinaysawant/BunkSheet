@@ -158,6 +158,7 @@ describe UsersController do
 
 			it "should redirect to user show page" do
 				post :create ,:user => @attr
+#				response.should redirect_to(init_path(assigns(:user)))
 				response.should redirect_to(user_path(assigns(:user)))
 			end
 

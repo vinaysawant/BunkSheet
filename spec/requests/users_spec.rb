@@ -34,6 +34,10 @@ describe "Users" do
 					response.should have_selector('div.flash.success',:content => "Welcome")
 				end.should change(User, :count).by(1)
 			end
+
+			it "should redirect to init timetable" do
+	
+			end
 		end
 	end
 	describe "signin" do

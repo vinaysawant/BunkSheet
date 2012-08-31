@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation 
 	attr_accessor		:password
+
+	has_many :lectures
 	email_regx = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
 	validates :name, :presence   => true,
