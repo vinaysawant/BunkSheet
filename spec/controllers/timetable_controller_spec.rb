@@ -7,10 +7,10 @@ describe TimetableController do
 	  it "returns http success" do
       	get :init
       	response.should be_success
-      end
+    end
 	  it "should have the right title" do
-		get :init
-		response.should have_selector('title',:content => "Init Time Table")
-	end
+			get :init
+			response.should have_selector('title',:content => "Init Time Table")
+		end
   end
 end
