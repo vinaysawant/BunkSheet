@@ -1,0 +1,12 @@
+<div class = "center">
+<h1>Step 1</h1>
+<%= form_for :lecture do |f| %>
+<div class="field">
+	</br>
+	</br>
+	<%= f.label :Subject %>
+	<%=	f.text_field :lecture %>
+	<%= f.submit "Add lecture" ,class: "btn btn-large btn-primary" %><br />
+</div>
+<% end %>
+</div>
