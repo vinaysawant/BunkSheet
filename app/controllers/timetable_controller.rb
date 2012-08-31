@@ -3,8 +3,4 @@ class TimetableController < ApplicationController
 		@title = "Init Time Table"
 		@lecture = Lecture.new
   end
-
-	def addlec
-		
-	end
 end
