@@ -1,6 +1,12 @@
 class Timetable < ActiveRecord::Base
   attr_accessible :day, :endtime, :lecture, :timestarted, :user_id
+	belongs_to :user
 #	has_many :lectures
+	validates :day,					:presence => true
+	validates :timestarted,	:presence => true
+	validates :endtime,			:presence => true	
+	validates :lecture, 		:presence => true, :length => {:maximum => 20}
+	validates :user_id, 		:presence => true
 end
 
 # == Schema Information

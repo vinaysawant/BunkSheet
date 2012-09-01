@@ -1,6 +1,6 @@
 BunkSheet::Application.routes.draw do
 #	get 'timetable/init'
-  resources :timetable
+  resources :timetables
 	resources :users
 	resources :sessions, :only => [:new,:create,:destroy]
 
@@ -12,7 +12,7 @@ BunkSheet::Application.routes.draw do
 	match '/help',			:to => 'pages#help'
 	match '/signin',		:to => 'sessions#new'
 	match '/signout',		:to => 'sessions#destroy'
-	match '/inittime',	:to => 'timetable#init'
+	match '/inittime',	:to => 'timetables#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
