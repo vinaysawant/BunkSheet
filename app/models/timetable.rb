@@ -1,6 +1,6 @@
 class Timetable < ActiveRecord::Base
-  attr_accessible :day, :endtime, :lecture_id, :timestarted, :user_id
-	has_many :lectures
+  attr_accessible :day, :endtime, :lecture, :timestarted, :user_id
+#	has_many :lectures
 end
 
 # == Schema Information
@@ -11,7 +11,7 @@ end
 #  day         :string(255)
 #  timestarted :time
 #  endtime     :time
-#  lecture_id  :integer(4)
+#  lecture     :string(255)
 #  user_id     :integer(4)
 #  created_at  :datetime        not null
 #  updated_at  :datetime        not null
