@@ -4,7 +4,7 @@ class CreateTimetables < ActiveRecord::Migration
       t.string :day
       t.time :timestarted
       t.time :endtime
-      t.integer :lecture_id
+      t.string :lecture
       t.integer :user_id
 
       t.timestamps

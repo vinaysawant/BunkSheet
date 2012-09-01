@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813083619) do
+ActiveRecord::Schema.define(:version => 20120831175558) do
 
   create_table "lectures", :force => true do |t|
     t.string   "lecture"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20120813083619) do
     t.string   "day"
     t.time     "timestarted"
     t.time     "endtime"
-    t.integer  "lecture_id"
+    t.string   "lecture"
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

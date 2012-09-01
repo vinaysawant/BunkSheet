@@ -1,7 +1,7 @@
 class TimetableController < ApplicationController
   def init
 		@title = "Init Time Table"
-		@lecture = Lecture.new
+		@timetable = Timetable.new
   end
 
 	def addlec

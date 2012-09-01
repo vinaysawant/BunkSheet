@@ -12,7 +12,7 @@ end
 #  day         :string(255)
 #  timestarted :time
 #  endtime     :time
-#  lecture_id  :integer(4)
+#  lecture     :string(255)
 #  user_id     :integer(4)
 #  created_at  :datetime        not null
 #  updated_at  :datetime        not null

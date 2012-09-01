@@ -148,6 +148,9 @@ div.field, div.actions{
   @extend .error;
  }
 
+.field_inline {
+	display: inline-block;
+}
 ul.users{
 	margin-top: 1em;
 }
