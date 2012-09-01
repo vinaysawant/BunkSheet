@@ -1,15 +1,6 @@
 <div class = "center">
 <h1>Step 1</h1>
-<<<<<<< HEAD
-<%= form_for :lecture do |f| %>
-<div class="field">
-	</br>
-	</br>
-	</br>
-	<%= f.label :Subject %>
-=======
 <%= form_for :timetable do |f| %>
-<br/>
 </div>
 <div>
 	<%= f.label :From %>  
@@ -19,11 +10,9 @@
 	<%= f.label :Day %>
 	<%=	f.text_field :day %>
 	<%= f.label :Lecture %>
->>>>>>> timetablemodel
 	<%=	f.text_field :lecture %>
 </br>
 	<%= f.submit "Add lecture" ,class: "btn btn-large btn-primary" %><br />
 	
 </div>
 <% end %>
-</p>
