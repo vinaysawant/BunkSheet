@@ -1,4 +1,6 @@
 BunkSheet::Application.routes.draw do
+  resources :schedules
+
 #	get 'timetable/init'
   resources :timetables
 	resources :users

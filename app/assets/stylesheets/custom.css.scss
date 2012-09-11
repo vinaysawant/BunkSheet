@@ -17,11 +17,15 @@ section {
 textarea {
   resize: vertical;
 }
-
+.right{
+	text-align:right;
+}
 .center {
   text-align: center;
 }
-
+.left{
+	text-align:left;
+}
 .center h1 {
   margin-bottom: 10px;
 }
@@ -75,8 +79,8 @@ p {
 /* footer */
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
+  margin-top: 150px;
+  padding-top: 15px;
   border-top: 1px solid #eaeaea;
   color: #999;
 }

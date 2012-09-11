@@ -10,11 +10,28 @@
 	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 	</div>
 <% else %>
-<div class ="center">
-<h1>Welcome,</h1>	
-	<p>Here are few things you can do,</br>
-	   First Create your time table
-	</p>
-</div>
+
+<h1>Welcome, <%= @current_user.name %></h1>	
+<h5><%= Time.now %></h5><br/><br/><br/>
+<table>
+  <tr>
+    <th>Today is <%= Date.today%></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @current_schedule.each do |schedule| %>
+	<%if schedule.day==Date.today.wday.to_s()%>
+	  <tr>
+  	  <td><%= schedule.lecture %></td>
+	    <td><%= button_to 'Add to bunked list' %></td>
+  	</tr>
+	<% end %>
+<% end %>
+
+</table>
+<br />
+
 <% end %>
 

@@ -7,7 +7,8 @@ gem 'bootstrap-sass', '2.0.0'
 gem 'gravatar_image_tag'
 gem 'mysql2'
 gem 'will_paginate'
-
+gem 'awesome_print'
+gem 'pry'
 group :development do
   gem 'rspec-rails','2.11.0'
   gem 'autotest'

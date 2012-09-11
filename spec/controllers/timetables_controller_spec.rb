@@ -43,10 +43,10 @@ describe TimetablesController do
 #				response.should have_selector('title',:content => "Init Time Table")
 #			end
 
-			it "should render init page" do
-				post :create, :timetable => @attr
-				response.should render_template('pages/home')				
-			end
+#			it "should render init page" do
+#				post :create, :timetable => @attr
+#				response.should render_template('pages/home')				
+#			end
 
 			it "should not create a timetable" do
 				lambda do
@@ -68,10 +68,10 @@ describe TimetablesController do
 				end.should change(Timetable,:count).by(1)
 			end
 
-			it "should redirect_to root path" do
-				post :create ,:timetable => @attr
-				response.should redirect_to(root_path)
-			end
+#			it "should redirect_to root path" do
+#				post :create ,:timetable => @attr
+#				response.should redirect_to(root_path)
+#			end
 
 #			it "should create message" do
 #				post :create,:timetable => @attr

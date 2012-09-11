@@ -34,12 +34,16 @@ describe "LayoutLinks" do
 	it "should have the right links on the layout" do
 		visit root_path
 		response.should have_selector('title',:content => "Home")
+		visit root_path
 		click_link "About"
 		response.should have_selector('title',:content => "About")  
+		visit root_path
 		click_link "Contact"
 		response.should have_selector('title',:content => "Contact")  
+		visit root_path
 		click_link "Home"
 		response.should have_selector('title',:content => "Home")  
+		visit root_path
 		click_link "Sign up now!"
 		response.should have_selector('title',:content => "Sign up")
 #		response.should have_selector('a[href="/"]>img')  
@@ -77,7 +81,7 @@ describe "LayoutLinks" do
 		it "should have a setting link" do
 			visit root_path
 			response.should have_selector("a",	:href 	 => edit_user_path(@user),
-																					:content => "Settings")
+																					:content => "Edit Profile")
 		end
 
 		it "should have a users link" do

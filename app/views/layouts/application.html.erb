@@ -5,6 +5,9 @@
 			<%= csrf_meta_tag %>
 			<%= render 'layouts/stylesheets'%>
 			<%= javascript_include_tag "application" %>
+			<%= javascript_include_tag "http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js", "application" %>
+					<%= javascript_include_tag "http://twitter.github.com/bootstrap/assets/js/bootstrap-combobox.js", "application" %>
+			<link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
 	</head> 
 <body>
     <%= render 'layouts/header'%>	
@@ -14,7 +17,11 @@
 			<% end %>		
 			<%= yield %>
 		<%= render 'layouts/footer'%>
-		</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
 		<%= debug(params) if Rails.env.development? %>
+		</div>
 </body>
 </html>

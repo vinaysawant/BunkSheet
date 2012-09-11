@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   def home
 		@title="Home"
+		@current_schedule = current_user.schedules
   end
 
   def contact

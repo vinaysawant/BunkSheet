@@ -1,0 +1,28 @@
+<%= form_for(@schedule) do |f| %>
+  <% if @schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% @schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="combobox">
+    <%= f.label :day %><br />
+		<%= f.select :day,options_for_select([[],["Monday","1"],["Tuesday",2],["Wednesday","3"],["Thursday","4"],
+["Friday","5"],["Saturday","6"],["Sunday","0"]]) %>
+  </div>
+
+  <div class="combobox">
+    <%= f.label :lecture %><br />
+    <%= f.text_field :lecture %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
