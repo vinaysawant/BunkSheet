@@ -11,14 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120909142809) do
-
-  create_table "lectures", :force => true do |t|
-    t.string   "lecture"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "user_id"
-  end
+ActiveRecord::Schema.define(:version => 20120911143548) do
 
   create_table "schedules", :force => true do |t|
     t.string   "day"
@@ -26,16 +19,6 @@ ActiveRecord::Schema.define(:version => 20120909142809) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "timetables", :force => true do |t|
-    t.string   "day"
-    t.time     "timestarted"
-    t.time     "endtime"
-    t.string   "lecture"
-    t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

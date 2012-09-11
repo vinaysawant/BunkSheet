@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation 
 	attr_accessor		:password
-	has_many :timetables
 	has_many :schedules
 
 	email_regx = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

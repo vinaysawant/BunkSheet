@@ -41,7 +41,7 @@ describe SchedulesController do
 			it "should not create a timetable" do
 				lambda do
 					post :create, :schedule => @attr						
-				end.should_not change(Timetable,:count)
+				end.should_not change(Schedule,:count)
 			end
 		end
 	

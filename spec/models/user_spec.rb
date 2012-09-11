@@ -175,11 +175,11 @@ describe User do
 	describe "timetable associations" do
 		before(:each) do
 		  @user = User.create(@attr)
-			@lec = Factory(:timetable,:user => @user)
+			@lec = Factory(:schedule,:user => @user)
 		end
 	
 		it "should have a timetable attribute" do
-			@user.should respond_to(:timetables)
+			@user.should respond_to(:schedules)
 		end	
 		
 		it "should have the right lecture" do
