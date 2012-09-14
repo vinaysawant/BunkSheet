@@ -1,0 +1,14 @@
+<table class="profile" summary="Profile Information">
+<tr>
+	<td class="main">
+		<h1>
+			<%= image_tag "f_logo.png",:size => "32x32" %>
+			<%= @fbuser.name %>
+		</h1>
+	</td>
+	<td class ="sidebar round">
+		<strong>Name</strong> <%= @fbuser.name %> <br />
+		<strong>URL</strong>	<%= link_to fbuser_path(@fbuser), fbuser_path(@fbuser) %>
+	</td>
+</tr>
+</table>

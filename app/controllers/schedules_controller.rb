@@ -1,12 +1,12 @@
 class SchedulesController < ApplicationController
 
-	before_filter :authenticate
+	before_filter :fbcurrent_user
 
   # GET /schedules
   # GET /schedules.json
   def index
 #		user = @current_user.id
-    @schedules = @current_user.schedules
+    @schedules = @fbcurrent_user.schedules
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,11 +46,11 @@ class SchedulesController < ApplicationController
   # POST /schedules
   # POST /schedules.json
   def create
-    @schedule = current_user.schedules.build(params[:schedule])
+    @schedule = fbcurrent_user.schedules.build(params[:schedule])
 
     respond_to do |format|
       if @schedule.save
-        format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }
+        format.html { redirect_to schedules_path, notice: 'Schedule was successfully created.' }
         format.json { render json: @schedule, status: :created, location: @schedule }
       else
         format.html { render action: "new" }

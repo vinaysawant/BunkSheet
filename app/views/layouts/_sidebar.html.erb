@@ -1,17 +1,14 @@
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
+<div id="user_nav">
+  <% if fbcurrent_user %>
+
+  <% else %>
+	<h3>Sign in Using Facebook</h3><br/><br/>
+	<h4></h4>
+	<a href="/auth/facebook" class="auth_provider">
+	  <%= image_tag "f_logo.png", :size => "64x64", :alt => "Facebook" %>   Login Using Facebook
+	</a>
+  <% end %>
+</div>
+
+
 

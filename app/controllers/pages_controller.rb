@@ -2,8 +2,8 @@ class PagesController < ApplicationController
 
   def home
 		@title="Home"
-		if signed_in?
-			@current_schedule = current_user.schedules
+		if fbcurrent_user
+			@current_schedule = fbcurrent_user.schedules
 		end
   end
 

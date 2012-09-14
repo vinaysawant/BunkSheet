@@ -1,10 +1,12 @@
 BunkSheet::Application.routes.draw do
   resources :schedules
-
-#	get 'timetable/init'
-  resources :timetables
 	resources :users
+	resources :fbusers
 	resources :sessions, :only => [:new,:create,:destroy]
+	
+	match 'auth/:provider/callback', to: 'fbsessions#create'
+	match 'auth/failure', to: redirect('/')
+	match 'fbsignout', to: 'fbsessions#destroy', as: 'fbsignout'
 
 	root :to => 'pages#home'
 

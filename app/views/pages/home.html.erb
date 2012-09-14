@@ -1,17 +1,9 @@
-<% if !signed_in? %>
+<% if !fbcurrent_user %>
 	<div class="center">
-	<h1>Welcome to the BunkSheet</h1>
-	<h2>Just sign up and Keep track of your Bunked Lectures</h2>
-	<p>If You want to look inside without creating new account </br>
-		 Use following details for login..!!!</br>
-		 Email id => ab@gmail.com</br>
-		 Password => 123456		
-	</p>
-	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+
 	</div>
 <% else %>
-
-<h1>Welcome, <%= @current_user.name %></h1>	
+<h1>Welcome, <%= fbcurrent_user.name %></h1>	
 <h5><%= Time.now %></h5><br/><br/><br/>
 <table>
   <tr>
@@ -25,7 +17,7 @@
 	<%if schedule.day==Date.today.wday.to_s()%>
 	  <tr>
   	  <td><%= schedule.lecture %></td>
-	    <td><%= button_to 'Add to bunked list' %></td>
+	    <td><%= button_to 'Add to bunked list'%></td>
   	</tr>
 	<% end %>
 <% end %>

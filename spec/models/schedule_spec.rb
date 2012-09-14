@@ -3,12 +3,12 @@ require 'spec_helper'
 describe Schedule do
 
 	before(:each) do
-	  @user = Factory(:user)
+	  @fbuser = Factory(:fbuser)
 		@attr = {:day => "monday",:lecture => "DAA"}
 	end
 
 	it "should create new instance with valid attributes" do
-		@user.schedules.create!(@attr)
+		@fbuser.schedules.create!(@attr)
 	end
 	
 	it "should require a day" do
@@ -23,16 +23,16 @@ describe Schedule do
 	
 	describe "user associations" do
 		before(:each) do
-		  @schedule = @user.schedules.create(@attr)
+		  @schedule = @fbuser.schedules.create(@attr)
 		end
 
 		it "should have a user attribute" do
-			@schedule.should respond_to(:user)
+			@schedule.should respond_to(:fbuser)
 		end		
 		
 		it "should have the right associated user" do
-			@schedule.user_id.should == @user.id
-			@schedule.user.should == @user
+			@schedule.fbuser_id.should == @fbuser.id
+			@schedule.fbuser.should == @fbuser
 		end		
 	end
 
@@ -51,7 +51,7 @@ end
 #  id         :integer(4)      not null, primary key
 #  day        :string(255)
 #  lecture    :string(255)
-#  user_id    :integer(4)
+#  fbuser_id  :integer(4)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
 #
