@@ -2,6 +2,7 @@ BunkSheet::Application.routes.draw do
   resources :schedules
 	resources :users
 	resources :fbusers
+	resources :bunklists
 	resources :sessions, :only => [:new,:create,:destroy]
 	
 	match 'auth/:provider/callback', to: 'fbsessions#create'

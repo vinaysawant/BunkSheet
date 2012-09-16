@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
 
-	before_filter :fbcurrent_user
+	before_filter :fbauthenticate
 
   # GET /schedules
   # GET /schedules.json

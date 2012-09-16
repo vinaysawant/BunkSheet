@@ -1,23 +1,30 @@
-<h1>Listing schedules</h1>
-
+<h1>Your Week Schedule</h1>
+<br/>
 <table>
   <tr>
-    <th>Day</th>
-    <th>Lecture</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+    <th>Sunday</th>
   </tr>
 
 <% @schedules.each do |schedule| %>
   <tr>
-    <td><%= schedule.day %></td>
-    <td><%= schedule.lecture %></td>
+    <td><% if schedule.day == '1' %><%= schedule.lecture %><% end %></td>
+    <td><% if schedule.day == '2' %><%= schedule.lecture %><% end %></td>
+    <td><% if schedule.day == '3' %><%= schedule.lecture %><% end %></td>
+    <td><% if schedule.day == '4' %><%= schedule.lecture %><% end %></td>
+    <td><% if schedule.day == '5' %><%= schedule.lecture %><% end %></td>
+    <td><% if schedule.day == '6' %><%= schedule.lecture %><% end %></td>
+    <td><% if schedule.day == '0' %><%= schedule.lecture %><% end %></td>
     <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-    <td><%= link_to 'Delete from schedule', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 
 </table>
 <br />
-<%= link_to 'New Schedule', new_schedule_path %>
+<%= link_to 'Add New Lecture', new_schedule_path %>

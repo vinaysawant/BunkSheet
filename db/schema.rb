@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120914143316) do
+ActiveRecord::Schema.define(:version => 20120915091134) do
 
   create_table "authentications", :force => true do |t|
     t.integer  "user_id"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(:version => 20120914143316) do
     t.date     "date"
     t.integer  "schedule_id"
     t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "bunklists", :force => true do |t|
+    t.string   "date"
+    t.integer  "schedule_id"
+    t.integer  "fbuser_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

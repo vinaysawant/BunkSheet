@@ -29,9 +29,16 @@ module SessionsHelper
 		end
 	end
 
+	def fbauthenticate
+		if !fbcurrent_user
+			flash[:notice] = "Please sign in to access this page"
+			deny_access unless fbcurrent_user
+		end
+	end
+
 	def deny_access
 		store_locations
-		redirect_to signin_path, :notice => "Please sign in to access this page"
+		redirect_to root_path, :notice => "Please sign in to access this page"
 	end
 
 	def store_locations

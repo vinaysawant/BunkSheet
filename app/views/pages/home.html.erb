@@ -1,6 +1,6 @@
 <% if !fbcurrent_user %>
 	<div class="center">
-
+	<%= image_tag "homepage.jpg" %>
 	</div>
 <% else %>
 <h1>Welcome, <%= fbcurrent_user.name %></h1>	
@@ -17,13 +17,12 @@
 	<%if schedule.day==Date.today.wday.to_s()%>
 	  <tr>
   	  <td><%= schedule.lecture %></td>
-	    <td><%= button_to 'Add to bunked list'%></td>
+	    <td><%= button_to 'Add to bunked list',{:controller => "bunklists",:action => "create",:schedule_id => schedule} %></td>
   	</tr>
 	<% end %>
 <% end %>
-
 </table>
 <br />
-
+<h3>Note:<h4>The App is under contruction....so kindly ignore errors...</h4></h3><br/>
 <% end %>
 
