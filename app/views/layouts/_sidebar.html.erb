@@ -1,8 +1,8 @@
 <div id="user_nav">
   <% if fbcurrent_user %>
 
-		<p>Total lectures in 1 Week <%= Schedule.count(:fbuser_id)%> </p>
-		<p>Bunked lectures <%= Bunklist.count(:fbuser_id)%> </p>
+		<p>Total lectures in 1 Week <% cond = Schedule.where(fbuser_id: @fbcurrent_user.id)%><%= cond.count %></p>
+		<p>Bunked lectures <% cond2 = Bunklist.where(fbuser_id: @fbcurrent_user.id)%><%= cond2.count %> </p>
   <% else %>
 	<h3>Sign in Using Facebook</h3><br/><br/>
 	<h4></h4>
